@@ -1,0 +1,28 @@
+<!-- add_photo.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Photo</title>
+    <link rel="stylesheet" href="/static/style-add_photo.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Add Photo to Dataset</h1>
+        <form id="addPhotoForm" method="post" action="/add-photo" enctype="multipart/form-data">
+            <select name="username" required>
+                {% for username in usernames %}
+                <option value="{{ username }}">{{ username }}</option>
+                {% endfor %}
+            </select>
+            <input type="file" name="photo" accept="image/*" required />
+            <button type="submit">Upload Photo</button>
+        </form>
+        <a href="/">Back to Login</a>
+    </div>
+</body>
+
+</html>
